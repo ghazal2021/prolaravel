@@ -1,0 +1,22 @@
+<form class="dropdown-menu p-4  method="POST" action="{{route('comments')}}">
+
+                                     @csrf
+                                     <div class="form-group">
+                                         <input type="hidden" class="form-control" name="parent_id"
+                                                value="{{$comment->id}}">
+                                     </div>
+                                     <div class="form-group">
+                                         <input type="hidden" class="form-control" name="post_id" value="{{$post->id}}">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" class="form-control" name="name"
+                                                value="{{$comment->post->user->name}}">
+                                     </div>
+                                     <div class="form-group">
+
+                                         <textarea class="form-control" name="description" rows="3"></textarea>
+                                     </div>
+                                     <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
